@@ -1,0 +1,307 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "earthDECK-API",
+        "description": "earthDECK REST API",
+        "version": "1.0.0"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/v1/signup": {
+            "post": {
+                "tags": [
+                    "signup"
+                ],
+                "summary": "Signup of new user",
+                "operationId": "signup",
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "full_name",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ethnicity",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "nationality",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "location",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "projects",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "project_name_web",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "content_likes",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "social_networks",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "other_comments",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad request, Invalid param pass in request"
+                    },
+                    "401": {
+                        "description": "Unauthorised access."
+                    },
+                    "404": {
+                        "description": "Not found."
+                    },
+                    "422": {
+                        "description": "not acceptable, validation related errors"
+                    },
+                    "429": {
+                        "description": "Too many request."
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    },
+                    "503": {
+                        "description": "Service Unavailable."
+                    }
+                },
+                "security": [
+                    {
+                        "api-key": []
+                    }
+                ]
+            }
+        },
+        "/v1/set-password": {
+            "post": {
+                "tags": [
+                    "User Password"
+                ],
+                "summary": "Set User Password",
+                "operationId": "setPassword",
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password_token",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password_confirmation",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad request, Invalid param pass in request"
+                    },
+                    "401": {
+                        "description": "Unauthorised access."
+                    },
+                    "404": {
+                        "description": "Not found."
+                    },
+                    "422": {
+                        "description": "not acceptable, validation related errors"
+                    },
+                    "429": {
+                        "description": "Too many request."
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    },
+                    "503": {
+                        "description": "Service Unavailable."
+                    }
+                },
+                "security": [
+                    {
+                        "api-key": []
+                    }
+                ]
+            }
+        },
+        "/v1/projects": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Show Project Details",
+                "operationId": "show",
+                "parameters": [
+                    {
+                        "name": "project_slug",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad request, Invalid param pass in request"
+                    },
+                    "401": {
+                        "description": "Unauthorised access."
+                    },
+                    "404": {
+                        "description": "Not found."
+                    },
+                    "422": {
+                        "description": "not acceptable, validation related errors"
+                    },
+                    "429": {
+                        "description": "Too many request."
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    },
+                    "503": {
+                        "description": "Service Unavailable."
+                    }
+                },
+                "security": [
+                    {
+                        "api-key": []
+                    }
+                ]
+            }
+        },
+        "/v1/tags/tg-3/projects": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Listing of projects",
+                "operationId": "index",
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad request, Invalid param pass in request"
+                    },
+                    "401": {
+                        "description": "Unauthorised access."
+                    },
+                    "404": {
+                        "description": "Not found."
+                    },
+                    "422": {
+                        "description": "not acceptable, validation related errors"
+                    },
+                    "429": {
+                        "description": "Too many request."
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    },
+                    "503": {
+                        "description": "Service Unavailable."
+                    }
+                },
+                "security": [
+                    {
+                        "api-key": []
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {},
+    "securityDefinitions": {
+        "api-key": {
+            "type": "apiKey",
+            "name": "api-key",
+            "in": "header"
+        }
+    }
+}
