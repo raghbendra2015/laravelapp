@@ -51,7 +51,7 @@ class RegisterController extends Controller
         try {
             return view('auth.register');
         } catch (\Exception $ex) {
-            toastr()->error('Somthing went wrong!');
+            toastr()->error('Something went wrong!');
             return redirect('/login');
         }
     }
