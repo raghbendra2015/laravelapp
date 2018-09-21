@@ -30,6 +30,10 @@ return [
     ],
     'message' => [
         'NO_RECORD_FOUND' => 'No record found.',
+        'CREATED' => 'Records created successfully.',
+        'UPDATED' => 'Records updated successfully.',
+        'DELETED' => 'Records deleted successfully.',
+        'COMMENT_SUCCESS' => 'Comment has been added successfully.',
     ],
     'common' => [
 

@@ -3701,3 +3701,13 @@ body .navbar-nav > li > a > .pe-7s-user{ font-size: 35px; float:left; margin-rig
 .navbar-nav > li > a > span{font-size: 16px; color: #222;}
 .navbar-right { float: right !important; margin-right: 15px;}
 body .navbar-nav > li > a > .pe-7s-angle-down{position: relative; top: 5px; right: -4px;}
+.rating { font-size:20px; color:#ede016;}
+.asterisk,.help-block strong{color: #e62424;}
+.table{width: 100% !important;    max-width: 100% !important;}
+.fa-icon i{font-size: 15px;margin: 3px; }
+#commentSection{height: 200px;
+  width: 100%;
+  overflow: auto;
+  margin: 20px 0;
+  border: solid 1px #cccc;
+  padding: 15px;}

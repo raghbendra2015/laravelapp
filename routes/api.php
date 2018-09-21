@@ -14,6 +14,6 @@ use Illuminate\Http\Request;
  */
 //Films
 Route::group(['prefix' => 'v1'], function () {
-    Route::resource('service', 'API\v1\FilmsController');
+    Route::any('films', 'API\v1\FilmsController@index');
 });
 

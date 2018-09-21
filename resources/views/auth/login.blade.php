@@ -44,6 +44,7 @@
 <![endif]-->
 
 <div class="color-line"></div>
+<a class="btn btn-success" href="{{ url('/') }}">Go to Dashboard</a>
 <div class="login-container">
     <div class="row">
         <div class="col-md-12">

@@ -83,7 +83,7 @@
                     <ul class="nav navbar-nav no-borders">
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                                <i class="pe-7s-user"></i> <span class="small">{{Auth::user()->first_name}} {{Auth::user()->last_name}} </span> <i class="pe-7s-angle-down"></i>
+                                <i class="pe-7s-user"></i> <span class="small">{{Auth::user()->name}} </span> <i class="pe-7s-angle-down"></i>
                             </a>
 
                             <ul class="dropdown-menu hdropdown notification animated flipInX">
@@ -107,12 +107,8 @@
                 
 
                 <ul class="nav" id="side-menu">
-
                     <li>
-                        <a href="{{ url('/dashboard') }}" class="{{ Request::segment(1) == 'dashboard' ? 'active' : '' }}"> <span class="nav-label">Dashboard</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/films') }}" class="{{ Request::segment(1) == 'film' ? 'active' : '' }}"><span class="nav-label">films</span></a>
+                        <a href="{{ url('/admin') }}" class="{{ Request::segment(1) == 'film' ? 'active' : '' }}"><span class="nav-label">films</span></a>
                     </li>
                 </ul>
             </div>
@@ -129,6 +125,7 @@
             </footer>
         </div>
         <!-- Vendor scripts -->
+
         <script src="{{url('vendor/jquery/dist/jquery.min.js')}}"></script>
         <script src="{{url('vendor/jquery-ui/jquery-ui.min.js')}}"></script>
         <script src="{{url('vendor/slimScroll/jquery.slimscroll.min.js')}}"></script>

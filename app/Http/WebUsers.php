@@ -9,4 +9,12 @@ class WebUsers {
         }
         return false;
     }
+
+    public static function isAdmin() {
+        $adminRole = config('constant.roles.ADMIN');
+        if (Auth::user()->role_id == $adminRole) {
+            return true;
+        }
+        return false;
+    }
 }

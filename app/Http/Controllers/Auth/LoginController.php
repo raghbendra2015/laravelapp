@@ -78,6 +78,9 @@ class LoginController extends Controller {
                 /* doing login */
                 if (Auth::validate($userdata)) {
                     if (Auth::attempt($userdata)) {
+                        if (WebUsers::isAdmin()) {
+                            return redirect('/admin');
+                        }
                         if (WebUsers::isUser()) {
                             return redirect('/dashboard');
                         }

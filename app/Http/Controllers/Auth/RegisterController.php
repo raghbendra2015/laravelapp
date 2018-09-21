@@ -63,7 +63,6 @@ class RegisterController extends Controller
      * @return User
      */
     protected function register(Request $request) {
-        /** @var User $user */
         DB::beginTransaction();
         try {
             $data = $request->all();
@@ -81,9 +80,7 @@ class RegisterController extends Controller
             return redirect()->to('/register');
         } catch (\Exception $ex) {
             DB::rollBack();
-
             $error = $ex->getMessage() . ' - ' . $ex->getLine();
-            die($error);
             toastr()->error($error);
             return redirect()->to('/register');
         }
