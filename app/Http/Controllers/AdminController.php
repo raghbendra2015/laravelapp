@@ -197,11 +197,11 @@ href="javascript:void(0);" cstm="'.$filmList->id.'" id="deleteFilm'.$filmList->i
         try {
            $filmId = $this->_request->filmId;
            $reslt = Films::deleteFilm($filmId);
-           return response()->json(['status' => true,'message' => "Records has been deleted"],200);
+               return response()->json(['status' => true,'message' => "Records has been deleted"],config('constant.api_response.OK'));
         } catch (Exception $ex) {
             $error = $ex->getMessage() . ' - ' . $ex->getLine();
             toastr()->error($error);
-            return redirect()->to('/admin');
+            return response()->json(['status' => false,'message' => $error],config('constant.api_response.UNPROCESSABLE_ENTITY'));
         }
     }
 

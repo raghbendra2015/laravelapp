@@ -98,12 +98,12 @@ class DashboardController extends Controller {
             if ($saveData) {
                 return response()->json(['status' => true,'message' => config('constant.message.COMMENT_SUCCESS'), 'result' => $html],200);
             } else {
-                return response()->json(['status' => false,'message' => config('app.messages.default_error')],200);
+                return response()->json(['status' => false,'message' => config('app.messages.default_error')],config('constant.api_response.UNPROCESSABLE_ENTITY'));
             }
         } catch (\Exception $ex) {
             DB::rollBack();
             $exception = 'Error - ' . $ex->getMessage() . ' (Line - ' . $ex->getLine() . ')';
-            return response()->json(['status' => false,'message' => $exception],200);
+            return response()->json(['status' => false,'message' => $exception],config('constant.api_response.UNPROCESSABLE_ENTITY'));
         }
     }
 }
